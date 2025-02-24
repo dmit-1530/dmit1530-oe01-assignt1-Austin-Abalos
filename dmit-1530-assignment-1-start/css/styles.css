@@ -2,16 +2,426 @@
     --blue-grey-50: #ECEFF1;
     --blue-grey-100: #CFD8DC;
     --blue-grey-200: #B0BEC5;
+    --blue-grey-400: #78909C;
+    --blue-grey-800: #37474F;
     --blue-grey-900: #263238;
 }
 
+/* Global Styles */
 body {
-    color: #000;
-    text-align: center; 
+    color: #000;   
+    font-family: 'Inter', sans-serif; 
 }
 
-header, footer {
-    background-color: var(--blue-grey-50);
+header, 
+footer {
+    background-color: black;
     color: #fff;
     padding: 2rem 4rem;   
+}
+
+header img,
+footer img {
+    margin: 0 auto;
+    max-height: 5rem;
+}
+
+img {
+    border-radius: 8px;
+}
+
+li {
+    list-style-position: outside;
+    list-style-type: disc;
+    padding-top: 1rem;
+}
+
+nav {
+    justify-content: center;
+    margin-top: 2rem;
+    gap: 2rem;
+}
+
+.btn {
+    padding: 1rem;
+    display: inline-block;
+    background-color: black;
+    border-radius: 6px;
+}
+
+/* Utility Classes */
+
+.flex-container {
+    display: flex;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.light-gr-background {
+    background-color: var(--blue-grey-50);
+}
+
+.light-blue-gr-background {
+    background-color: var(--blue-grey-100);
+}
+
+.blue-gr-background {
+    background-color: var(--blue-grey-400);
+}
+
+.dark-gr-background {
+    background-color: var(--blue-grey-800);
+}
+
+/* Typography */
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+h2,
+blockquote > p,
+.cta p:first-child {
+    line-height: 3.375rem;
+    font-size: 2.25rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 400;
+}
+
+h3 {
+    line-height: 1.875rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+span {
+    line-height: 3.375rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+footer p,
+footer figcaption {
+    color: var(--blue-grey-200);
+    font-size: 0.75rem;
+}
+
+/* Home Page */
+
+main {
+    text-align: center;
+}
+
+.about img {
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.about .btn {
+    margin: 2.25rem 0 0 0;
+}
+
+.about p {
+    margin-top: 1rem;
+}
+
+.intro p{
+    margin-top: 2rem;
+}
+
+.list {
+    margin-top: 4rem;
+}
+
+.list div {
+    margin: 1.5rem 0;
+}
+
+.quote {
+    color: white;
+}
+
+.quote-author {
+    margin-top: 3rem;
+}
+
+.quote-author p:last-child {
+    margin-top: 1rem;
+}
+
+.architecture img {
+    margin-top: 3rem;
+}
+
+.architecture p {
+    margin-top: 1.5rem;
+}
+
+.residential,
+.commercial {
+    margin-top: 3rem;
+    text-align: left;
+}
+
+.cta {
+    background-color: white;
+    border-radius: 8px;
+    padding: 4rem;
+}
+
+.cta .btn {
+    margin-top: 2rem;
+}
+
+.cta p {
+    margin-top: 1rem;
+}
+
+.links-container {
+    justify-content: center;
+    gap: 4.5rem;
+    margin: 3rem 0 4rem 0;
+}
+
+.links {
+    flex-direction: column;
+    font-size: 0.75rem;
+}
+
+.links a {
+    margin-top: 0.75rem;
+}
+
+footer figure {
+    padding: 0 5rem;
+}
+
+footer figcaption {
+    margin: 1.5rem auto;
+    max-width: 17rem;
+}
+
+footer p {
+    text-align: center;
+}
+
+/* Gallery Page */
+
+.gallery-about div {
+    text-align: left;
+    margin-top: 3rem;
+}
+             
+.gallery-about p {
+    margin-top: 1.8rem;
+}
+
+.gallery-about figure {
+    margin: 3rem 0 2.5rem 0;
+}
+
+.gallery-about figure img {
+    margin: 0 auto;
+}
+
+.gallery-about figcaption {
+    margin-top: 1rem;
+}
+
+.gallery-about div:first-of-type img {
+    margin: 3rem auto 3.75rem auto;
+}
+
+.gallery-quote {
+    text-align: center;
+}
+
+.cultural {
+    color: white;
+}
+
+.cultural p {
+    margin-top: 1rem;
+    text-align: left;
+}
+
+.features {
+    color: white;
+    text-align: left;
+}
+
+.features div.md-flex > img {
+    margin: 3rem auto 3rem auto;
+}
+
+.features figure {
+    margin-top: 3rem;
+}
+
+.features figcaption {
+    margin-top: 1rem;
+}
+
+/* Media Queries */
+
+@media screen and (min-width: 720px) {
+    /* Utility Classes */
+    .flex {
+        display: flex;
+        gap: 1.5rem;
+        align-items: flex-start;
+    }
+
+    /* Global Styles */
+    header div {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 auto;
+        max-width: 1200px;
+    }
+
+    footer div.flex {
+        justify-content: space-between;
+    }
+
+    nav {
+        margin: 0;
+    }
+
+    /* Home Page */
+    .list {
+        flex-flow: row wrap;
+    }
+
+    .list div {
+        width: calc(50% - (1.5rem / 2));
+        text-align: left;
+        margin: 0;
+    }
+
+    .residential div,
+    .residential img,
+    .commercial div,
+    .commercial img {
+        width: 100%;
+    }
+
+    .commercial img {
+        order: -1;
+    }
+
+    .cta-container  {
+        padding: 4rem;
+    }
+
+    footer figure {
+        padding: 0;
+        margin: 0 9rem 0 0;
+    }
+
+    .links-container {
+        margin: 0 0 4rem 0;
+    }
+
+    footer p {
+        padding: 0 9.5rem;
+    }
+
+    /* Gallery Page */
+    .gallery-about figure {
+        order: 1;
+        width: 100%;
+        margin: 0;
+    }
+
+    .gallery-about .text-container {
+        margin-top: unset;
+    }
+
+    .gallery-about div:first-of-type img {
+        margin: unset;
+        width: 100%;
+    }
+
+    .text-container {
+        width: 100%;
+    }
+
+    .gallery-about > div:nth-of-type(2) {
+         margin-top: 3rem;
+    }
+
+    .cultural h2,
+    .features h2 {
+        text-align: center;
+    }
+
+    .features div.md-flex {
+        margin-top: 3rem;
+    }
+
+    .features div.md-flex > img {
+        margin: 0;
+        width: 100%;
+        flex: 1 1 50%;
+    }
+
+    .features .text-container {
+        flex: 1 1 50%;
+    }
+
+    .features li:first-of-type {
+        padding-top: 0;
+    }
+
+}
+
+@media screen and (min-width: 960px) {
+    /* Utility Classes */
+    .lg-flex {
+        display: flex;
+        column-gap: 1.5rem;
+    }
+
+    /* Home Page */
+    .features-list div {
+        width: calc((100% / 3) - (3rem / 3));
+    }
+
+    .residential.flex,
+    .commercial.flex {
+        flex-direction: column;
+    }
+
+    .residential,
+    .commercial {
+        width: 100%;
+    }
+
+
+    .commercial img {
+        order: 0;
+    }
+
+    /* Gallery Page */
+    .gallery-about .text-container {
+        margin-top: 3rem;
+    }
+
+    .features div.md-flex > img {
+        margin: 0;
+        width: 100%;
+        flex: 1 1 30%;
+    }
+
+    .features .text-container {
+        flex: 1 1 70%;
+    }
+
 }
